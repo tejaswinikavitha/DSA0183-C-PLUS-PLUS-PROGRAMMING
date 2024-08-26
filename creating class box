@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+class Box {
+public:
+    int length;
+
+private:
+    int width;
+
+public:
+    void setWidth(int w) {
+        width = w;
+    }
+    int getWidth() {
+        return width;
+    }
+};
+
+int main() {
+
+    Box myBox;
+
+   
+    cout << "Enter the Length of box: ";
+    cin >> myBox.length;
+
+
+    int w;
+    cout << "Enter the Width of box: ";
+    cin >> w;
+
+   
+    myBox.setWidth(w);
+
+    
+    cout << "Length of the box: " << myBox.length << endl;
+    cout << "Width of the box: " << myBox.getWidth() << endl;
+
+    return 0;
+}
