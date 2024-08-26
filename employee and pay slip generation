@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Employee {
+protected:
+    string Emp_name;
+    int Emp_id;
+    string Address;
+    string Mail_id;
+    long long Mobile_no;
+
+public:
+    Employee(string name, int id, string addr, string mail, long long mobile)
+        : Emp_name(name), Emp_id(id), Address(addr), Mail_id(mail), Mobile_no(mobile) {}
+    
+    void displayEmployeeDetails() {
+        cout << "Name: " << Emp_name << endl;
+        cout << "ID: " << Emp_id << endl;
+        cout << "Address: " << Address << endl;
+        cout << "Mobile No: " << Mobile_no << endl;
+        cout << "E-Mail ID: " << Mail_id << endl;
+    }
+};
+class Programmer : public Employee {
+private:
+    float BasicPay;
+
+public:
+    Programmer(string name, int id, string addr, string mail, long long mobile, float bp)
+        : Employee(name, id, addr, mail, mobile), BasicPay(bp) {}
+
+    void generatePaySlip() {
+        float DA = 0.97 * BasicPay;
+        float HRA = 0.10 * BasicPay;
+        float PF = 0.12 * BasicPay;
+        float StaffClubFund = 0.001 * BasicPay;
+
+        float GrossPay = BasicPay + DA + HRA;
+        float NetPay = GrossPay - (PF + StaffClubFund);
+
+        cout << "=======================" << endl;
+        cout << "PROGRAMMER PAYMENT SLIP" << endl;
+        cout << "=======================" << endl;
+        cout << "BASIC PAY => " << BasicPay << endl;
+        cout << "DEARNESS ALLOWANCE => " << DA << endl;
+        cout << "HOUSE RENT ALLOWANCE => " << HRA << endl;
+        cout << "PROVIDENT FUND => " << PF << endl;
+        cout << "CLUB FUND => " << StaffClubFund << endl;
+        cout << "GROSS PAY => " << GrossPay << endl;
+        cout << "NET PAY => " << NetPay << endl;
+    }
+};
+int main() {
+    string name, address, mail;
+    int id;
+    long long mobile;
+    float basicPay;
+    cout << "Enter Name of the Employee: ";
+    getline(cin, name);
+    cout << "Enter Address of the Employee: ";
+    getline(cin, address);
+    cout << "Enter ID of the Employee: ";
+    cin >> id;
+    cout << "Enter Mobile Number: ";
+    cin >> mobile;
+    cout << "Enter E-Mail ID of the Employee: ";
+    cin >> mail;
+    cout << "ENTER THE BASIC PAY OF THE PROGRAMMER => ";
+    cin >> basicPay;
+    Programmer programmer(name, id, address, mail, mobile, basicPay);
+    programmer.generatePaySlip();
+
+    return 0;
+}
