@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int getPersonAge() {
+    int age;
+    cout << "Enter your age: ";
+    cin >> age;
+    return age;
+}
+void checkVotingEligibility(int age) {
+    if (age >= 18) {
+        cout << "You are eligible to vote." << endl;
+    } else {
+        cout << "You are allowed to vote after " << 18 - age << " years." << endl;
+    }
+}
+
+int main() {
+    int age = getPersonAge(); 
+    checkVotingEligibility(age);  
+
+    return 0;
+}
