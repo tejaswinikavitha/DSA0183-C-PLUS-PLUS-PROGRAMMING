@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n,originalnumber,reversednumber=0,remainder;
+    cout<<"enter a number:";
+    cin>>n;
+    originalnumber=n;
+    while(n!=0){
+        remainder=n%10;
+        reversednumber= reversednumber*10+remainder;
+        n/=10;
+        
+    }
+    if(originalnumber == reversednumber)
+       cout<<"it is a polindrome";
+     else
+       cout<<"it is not a polindrome";
+    return 0;
+}
