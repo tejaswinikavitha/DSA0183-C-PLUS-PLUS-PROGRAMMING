@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+int sum(int a, int b , int c = 0,int d = 0) {
+    return a + b + c + d;
+}
+
+int main() {
+    int x = 25, y = 10, z = 15,w=30;
+    cout << "Sum of x, y, and z,w: " << sum(x, y, z, w) << endl;
+
+
+    return 0;
+}
