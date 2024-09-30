@@ -1,0 +1,14 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+using namespace std;
+int main(){
+    int num;
+    cin>>num;
+    string str=to_string(num);
+    sort(str.begin(),str.end());
+    do{
+        cout<<str<<endl;
+    }while(next_permutation(str.begin(),str.end()));
+    return 0;
+}
